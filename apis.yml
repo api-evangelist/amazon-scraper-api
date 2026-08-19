@@ -6,7 +6,7 @@ description: >-
 url: https://raw.githubusercontent.com/api-evangelist/amazon-scraper-api/refs/heads/main/apis.yml
 created: '2026-07-16'
 modified: '2026-07-16'
-specificationVersion: '0.21'
+specificationVersion: '0.23'
 tags:
   - web scraping
   - data extraction

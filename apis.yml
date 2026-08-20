@@ -8,6 +8,17 @@ created: '2026-07-16'
 modified: '2026-07-16'
 specificationVersion: '0.23'
 tags:
+  - Web Scraping
+  - Data Extraction
+  - E-Commerce Data
+  - Amazon
+  - marketplace data
+  - Product Intelligence
+  - Price Monitoring
+  - Competitor Research
+  - MCP
+  - Agent Tooling
+tags_raw:
   - web scraping
   - data extraction
   - e-commerce data
@@ -26,6 +37,17 @@ apis:
     humanURL: https://amazonscraperapi.com/docs
     baseURL: https://api.amazonscraperapi.com
     tags:
+      - Web Scraping
+      - Data Extraction
+      - E-Commerce Data
+      - Amazon
+      - marketplace data
+      - Product Intelligence
+      - Price Monitoring
+      - Competitor Research
+      - MCP
+      - Agent Tooling
+    tags_raw:
       - web scraping
       - data extraction
       - e-commerce data

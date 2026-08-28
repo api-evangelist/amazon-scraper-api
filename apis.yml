@@ -4,6 +4,17 @@ description: >-
   authentication, official SDKs, a CLI, and a local MCP server. Operated independently under the ChocoData namespace;
   not affiliated with Amazon.com, Inc.
 url: https://raw.githubusercontent.com/api-evangelist/amazon-scraper-api/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 created: '2026-07-16'
 modified: '2026-07-16'
 specificationVersion: '0.23'

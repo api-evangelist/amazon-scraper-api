@@ -1,0 +1,25 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/docs/endpoints/batch
+spec_type: Webhooks
+note: The provider documents a webhook callback surface for async batch jobs but publishes no AsyncAPI document.
+events:
+- event: batch.completed
+  trigger: All items in an async batch have completed processing.
+  delivery: POST to the webhook_url supplied on batch creation (must be a public https URL).
+  headers:
+  - X-ASA-Batch-Id
+  - X-ASA-Event
+  - X-ASA-Signature
+  payload: Identical to the GET /api/v1/amazon/batch/{id} response (status, counts, credits_charged, per-item results).
+security:
+  scheme: HMAC-SHA256 signature
+  header: X-ASA-Signature
+  format: sha256=<hmac-hex>
+  secret: webhook_signature_secret returned once on batch creation (whsec_ prefix); verify with a timing-safe compare.
+  sdk_support: Official SDKs include one-line webhook-signature verification.
+retry_policy:
+  on: non-2xx from the webhook endpoint
+  attempts: 5
+  backoff: 1min, 2min, 5min, 15min, 1h
+  observability: webhook_delivery_status and webhook_last_error fields on the batch resource.

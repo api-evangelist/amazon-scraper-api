@@ -1,0 +1,27 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amazon Scraper API
+  version: 1.0.0
+extends: openapi/amazon-scraper-api-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist:
+      generated: '2026-09-03'
+      method: generated
+      provenance: Spec fetched verbatim from https://amazonscraperapi.com/openapi.json (HTTP 200, 2026-09-03)
+- target: $.paths['/api/v1/amazon/search'].get
+  update:
+    x-apievangelist-note: >-
+      The docs search page documents sort_by, start_page, and pages query parameters that this published spec omits;
+      see https://amazonscraperapi.com/docs/endpoints/search.
+- target: $.paths['/api/v1/amazon/batch'].post
+  update:
+    x-apievangelist-note: >-
+      The batch poll operation GET /api/v1/amazon/batch/{id} is documented at
+      https://amazonscraperapi.com/docs/endpoints/batch but absent from this spec.
+- target: $.components.securitySchemes
+  update:
+    x-apievangelist-note: >-
+      The provider additionally documents an X-API-Key header (ai-plugin.json and published Claude Skills) not
+      declared here.

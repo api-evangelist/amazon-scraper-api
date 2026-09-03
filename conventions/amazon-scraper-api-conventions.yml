@@ -1,0 +1,49 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/docs
+authentication:
+  style: API key as api_key query parameter (also X-API-Key header and Authorization Bearer)
+  reference: authentication/amazon-scraper-api-authentication.yml
+idempotency:
+  coverage: none
+  note: >-
+    No idempotency-key mechanism is documented anywhere in the docs or declared in the OpenAPI. The only mutating
+    operation (POST /api/v1/amazon/batch) has no replay protection - resubmitting the same batch creates a second
+    batch and bills its successful items again.
+reversibility:
+  write_surface:
+  - operation: createBatch
+    method: POST
+    path: /api/v1/amazon/batch
+    reversal: none
+    grade: none
+    note: >-
+      No cancel/delete batch operation is documented - once submitted, a batch runs to completion and successful
+      items are billed. The docs batch page documents only submission, polling, and webhook delivery.
+  read_only_surface: [getProduct, getSearch]
+  note: >-
+    Data-extraction API - the two primary operations are reads with no state to reverse. The one write is a job
+    submission with no documented cancellation path.
+pagination:
+  style: page-based (search endpoint only)
+  params: [start_page, pages]
+  limits: pages 1-10, start_page 1-10; each fetched page bills as one request
+  response_fields: ["page", "products[].organic_position", "products[].sponsored_position"]
+request_tracing:
+  field: request_id (req_ prefix) in every error body
+  headers: [Asa-Attempts, Asa-Extractor-Version, Asa-Resolved-Url, Asa-Source-Status, Asa-Cost]
+versioning:
+  scheme: uri-path
+  current: v1
+  breaking_change_notice: 14 days via email + changelog; in-flight requests settled under the old contract
+error_envelope:
+  shape: '{"error","message","docs_url","request_id"}'
+  reference: errors/amazon-scraper-api-problem-types.yml
+rate_limit_signaling:
+  status: 429 (rate_limited) and 503 (capacity)
+  headers: [Retry-After, Asa-Concurrency, Asa-Rps]
+  reference: rate-limits/amazon-scraper-api-rate-limits.yml
+billing_semantics:
+  rule: Only successful (2xx) responses are billed; every non-2xx response is guaranteed free.
+  cost_header: Asa-Cost (credits spent on the request, 0 for non-2xx)
+dry_run: none

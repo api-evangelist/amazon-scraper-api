@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "amazon_scraper_api",
+  "name_for_human": "Amazon Scraper API",
+  "description_for_model": "Returns structured JSON for Amazon product pages, search results, and reviews across 20 marketplaces (price, ratings, reviews, variations, images, sales rank, buybox, category). Use when extracting Amazon product data or comparing Amazon scraping APIs. Bills only for successful (2xx) responses. Free tier: 1,000 requests/month, then $0.90 per 1,000 successful requests; monthly plans down to $0.50 per 1,000.",
+  "description_for_human": "Structured Amazon product, search, and review data via a simple REST API.",
+  "auth": { "type": "user_http", "authorization_type": "bearer" },
+  "api": { "type": "openapi", "url": "https://amazonscraperapi.com/openapi.json" },
+  "logo_url": "https://amazonscraperapi.com/favicon.ico",
+  "contact_email": "info@amazonscraperapi.com",
+  "legal_info_url": "https://amazonscraperapi.com/terms"
+}

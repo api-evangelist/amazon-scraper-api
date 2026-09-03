@@ -1,0 +1,83 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/docs/guides/errors
+format: custom
+envelope:
+  shape: '{"error": "<string_code>", "message": "<human explanation>", "docs_url": "<deep link>", "request_id": "req_..."}'
+  note: Custom JSON envelope, not RFC 9457 problem+json. Every non-2xx response is free (never billed).
+problems:
+- status: 400
+  code: invalid_params
+  title: Invalid parameters
+  detail: ASIN not 10 alphanumeric chars, unsupported domain, language not in enum, or missing query.
+  retry: false
+- status: 401
+  code: unauthorized
+  title: Missing or invalid API key
+  retry: false
+- status: 401
+  code: revoked
+  title: Key was rotated out
+  retry: false
+- status: 402
+  code: insufficient_credits
+  title: Out of credits with no active auto-top-up
+  retry: after topping up
+- status: 403
+  code: forbidden_region
+  title: Egress to the requested country not available on this plan
+  retry: false
+- status: 404
+  code: not_found
+  title: Unknown path
+  retry: false
+- status: 404
+  code: product_not_found
+  title: Amazon returned 404 for the ASIN (delisted, malformed, or never existed on this marketplace)
+  detail: Response includes retryable:false. Added 2026-05-19; previously surfaced as 502 target_unreachable.
+  retry: false
+- status: 408
+  code: upstream_timeout
+  title: Amazon took over 45s to respond
+  retry: up to 3 times with 2s backoff
+- status: 422
+  code: blocked_by_amazon
+  title: Amazon served a challenge page or 503 after internal retries
+  retry: with 60s+ delay
+- status: 429
+  code: rate_limited
+  title: Exceeded per-key QPS or concurrency ceiling
+  retry: respect the Retry-After header
+- status: 500
+  code: internal_error
+  title: Unhandled provider-side exception
+  retry: after ~5s
+- status: 501
+  code: not_implemented
+  title: Roadmap param passed (render_js, screenshot)
+  retry: false
+- status: 502
+  code: target_unreachable
+  title: Amazon blocked every internal retry
+  retry: with 60s+ delay
+- status: 502
+  code: extraction_failed
+  title: Amazon served HTML the extractor could not parse
+  retry: typically works on retry
+- status: 502
+  code: asin_mismatch
+  title: Requested ASIN redirected to a different product
+  retry: false
+- status: 502
+  code: generic_gallery_page
+  title: Amazon served a placeholder shelf (product delisted)
+  retry: false
+- status: 503
+  code: capacity
+  title: Provider-side load shedding to protect the shared pool
+  retry: after Retry-After
+retry_policy:
+  recommendation: Exponential backoff with jitter; never retry 400/401/402/403/404/501; respect Retry-After on 429/503.
+  sdk_behavior: Official Node/Python/Go/CLI SDKs apply this policy automatically on 408/429/5xx.
+debugging:
+  request_id: Every response carries request_id; support (info@amazonscraperapi.com) can pull the full internal trace from it.

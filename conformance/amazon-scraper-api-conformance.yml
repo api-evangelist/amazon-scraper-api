@@ -1,0 +1,33 @@
+generated: '2026-09-03'
+method: derived
+source: openapi/amazon-scraper-api-openapi-original.json + https://amazonscraperapi.com/docs
+standards:
+- id: oauth2
+  conforms: false
+  evidence: Auth is static API keys (query/header/bearer); no OAuth2 flows declared or documented.
+- id: oidc
+  conforms: false
+  evidence: No openid-configuration document on any host (probed 2026-09-03, 404).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom {"error","message","docs_url","request_id"} envelope, not application/problem+json.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt 404 on all hosts (probed 2026-09-03).
+- id: pagination
+  conforms: true
+  evidence: Page-based pagination on the search endpoint (start_page/pages params, documented at /docs/endpoints/search).
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented; see conventions/amazon-scraper-api-conventions.yml.
+- id: rate-limit-headers
+  conforms: false
+  evidence: Uses standard Retry-After on 429 but proprietary Asa-Concurrency/Asa-Rps utilisation headers, not IETF RateLimit-* fields.
+- id: webhook-hmac-signatures
+  conforms: true
+  evidence: Batch webhooks signed with HMAC-SHA256 (X-ASA-Signature sha256=<hex>, per-batch secret) - documented at /docs/endpoints/batch.
+- id: llms-txt
+  conforms: true
+  evidence: /llms.txt and /docs/llms.txt both served (200, fetched 2026-09-03), plus .md variants of every docs page.
+domain_standard: null
+domain_standard_note: The web-scraping/e-commerce-data market has no declared domain standard (no OpenRTB/SCIM/OData-class contract applies); reward-only, not penalized.

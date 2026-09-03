@@ -1,0 +1,43 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/docs/guides/rate-limits
+limit_count: 4
+limits:
+- scope: per-key
+  plan: Free
+  concurrency: 50
+  sustained_rps: 2
+  burst: 10 RPS for 3s
+- scope: per-key
+  plan: Vibe ($19/mo)
+  concurrency: 100
+  sustained_rps: 10
+  burst: 40 RPS for 3s
+- scope: per-key
+  plan: Pro ($49/mo)
+  concurrency: 200
+  sustained_rps: 25
+  burst: 60 RPS for 3s
+- scope: per-key
+  plan: Custom ($100-$2,000/mo)
+  concurrency: 300-1000+
+  sustained_rps: 50-500
+  burst: 2x sustained for 3s
+exhaustion:
+  status: 429
+  error_code: rate_limited
+  headers:
+  - Retry-After
+response_headers:
+- header: Asa-Concurrency
+  example: 3/20
+  description: Requests in-flight vs allowed, on every successful response.
+- header: Asa-Rps
+  example: 8/10
+  description: Current average RPS vs ceiling, on every successful response.
+- header: Retry-After
+  description: Seconds to wait, sent with 429 (and 503 capacity).
+notes:
+- Batch submissions consume one concurrency slot only for the POST; batch items run under a separate internal worker budget.
+- Header prefix changed from Spb-* to Asa-* on 2026-04-16 (old prefix served for 90 days after).
+- Short-term ceiling boosts available by emailing info@amazonscraperapi.com.

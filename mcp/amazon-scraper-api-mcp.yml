@@ -1,0 +1,51 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/integrations/mcp
+status: published
+deployment:
+  mode: local-stdio
+  install: npx -y amazon-scraper-api-mcp
+  package: https://www.npmjs.com/package/amazon-scraper-api-mcp
+  auth: api-key
+  verified: searched
+server:
+  name: amazonscraperapi
+  transport: stdio
+  version: 0.1.5
+  env:
+    ASA_API_KEY: API key from https://app.amazonscraperapi.com (asa_live_ prefix)
+  source_code: https://github.com/ChocoData-com/amazon-scraper-api-mcp
+  license: MIT
+notes:
+- >-
+  No hosted/remote MCP endpoint exists - the server is a local stdio process installed from npm and run by the MCP
+  client (documented for Claude Desktop, Cursor, and Cline).
+- >-
+  The marketing page advertises the install as `npx -y @chocodata/asa-mcp-server`; that scoped package is NOT on npm
+  (registry 404). The published package is `amazon-scraper-api-mcp` (v0.1.5, 2026-05-25) per the GitHub repo
+  package.json and the npm registry, with bin `amazon-scraper-api-mcp`.
+- >-
+  The marketing page describes five tools (scrape_product, search_amazon, batch_products, compare_marketplaces,
+  check_credits); the published source at src/index.ts registers four tools with the names below. The source is
+  recorded here as the truth; the marketing tool list does not match the shipped server.
+tools:
+- name: amazon_product
+  description: Fetch structured data for a single Amazon product by ASIN. Returns ~55 fields including title, price, variations, reviews, category ladder, images.
+  required: [query]
+  parameters: [query, domain, language]
+  source_operation: openapi/amazon-scraper-api-openapi-original.json#getProduct
+- name: amazon_search
+  description: Run an Amazon keyword search. Returns ranked product listings with organic/sponsored positions, prices, ratings, and image URLs.
+  required: [query]
+  parameters: [query, domain, sort_by, start_page, pages]
+  source_operation: openapi/amazon-scraper-api-openapi-original.json#getSearch
+- name: amazon_batch_create
+  description: Queue up to 1000 ASINs or search queries for async processing. Returns a batch id - poll with amazon_batch_status or receive a webhook callback.
+  required: [endpoint, items]
+  parameters: [endpoint, items, webhook_url]
+  source_operation: openapi/amazon-scraper-api-openapi-original.json#createBatch
+- name: amazon_batch_status
+  description: Poll an async batch job for progress + results.
+  required: [id]
+  parameters: [id]
+  source_operation: null

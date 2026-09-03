@@ -1,0 +1,58 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/docs/guides/sdks
+packages:
+- language: javascript
+  registry: npm
+  name: amazon-scraper-api-sdk
+  url: https://www.npmjs.com/package/amazon-scraper-api-sdk
+  install: npm install amazon-scraper-api-sdk
+  official: true
+  version: 0.1.5
+  published: '2026-05-25'
+  note: Node.js / TypeScript SDK. Typed responses, retry/backoff on 408/429/5xx, token-bucket rate limiter, webhook-signature verification.
+- language: python
+  registry: pypi
+  name: amazonscraperapi-sdk
+  url: https://pypi.org/project/amazonscraperapi-sdk/
+  install: pip install amazonscraperapi-sdk
+  official: true
+  version: 0.1.5
+  published: '2026-05-25'
+  note: Python 3.9+; sync and async variants; TypedDict type hints.
+- language: go
+  registry: go
+  name: github.com/ChocoData-com/amazon-scraper-api-sdk-go
+  url: https://pkg.go.dev/github.com/ChocoData-com/amazon-scraper-api-sdk-go
+  install: go get github.com/ChocoData-com/amazon-scraper-api-sdk-go
+  official: true
+  version: v0.1.5
+  published: '2026-05-25'
+  note: Verified via proxy.golang.org @latest; zero deps beyond net/http.
+- language: javascript
+  registry: npm
+  name: amazon-scraper-api-cli
+  url: https://www.npmjs.com/package/amazon-scraper-api-cli
+  install: npm install -g amazon-scraper-api-cli
+  official: true
+  version: 0.1.5
+  published: '2026-05-25'
+  note: First-party CLI (binary `asa`). The docs SDK page advertises the package as `amazonscraperapi-cli`, which is NOT on npm (registry 404); the published name is `amazon-scraper-api-cli` per the GitHub repo package.json and the npm registry.
+- language: javascript
+  registry: npm
+  name: amazon-scraper-api-mcp
+  url: https://www.npmjs.com/package/amazon-scraper-api-mcp
+  install: npx -y amazon-scraper-api-mcp
+  official: true
+  version: 0.1.5
+  published: '2026-05-25'
+  note: Local stdio MCP server. The marketing page advertises `@chocodata/asa-mcp-server`, which is NOT on npm (registry 404); the published name is `amazon-scraper-api-mcp` per the GitHub repo package.json and the npm registry.
+- language: javascript
+  registry: npm
+  name: n8n-nodes-amazonscraperapi
+  url: https://www.npmjs.com/package/n8n-nodes-amazonscraperapi
+  install: npm install n8n-nodes-amazonscraperapi
+  official: true
+  version: 0.1.0
+  published: '2026-05-15'
+  note: First-party n8n community node (product lookups, keyword searches, async bulk).

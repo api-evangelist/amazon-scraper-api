@@ -1,8 +1,7 @@
 name: Amazon Scraper API
-description: >-
-  REST/JSON API for extracting structured Amazon product, search, and batch data across 20 marketplaces, with key-based
-  authentication, official SDKs, a CLI, and a local MCP server. Operated independently under the ChocoData namespace;
-  not affiliated with Amazon.com, Inc.
+description: REST/JSON API for extracting structured Amazon product, search, and batch data across 20 marketplaces,
+  with key-based authentication, official SDKs, a CLI, and a local MCP server. Operated independently under the
+  ChocoData namespace; not affiliated with Amazon.com, Inc.
 url: https://raw.githubusercontent.com/api-evangelist/amazon-scraper-api/refs/heads/main/apis.yml
 deliveryModel:
   model: unknown
@@ -16,9 +15,37 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 created: '2026-07-16'
-modified: '2026-07-16'
+modified: '2026-09-03'
 specificationVersion: '0.23'
 tags:
+- Web Scraping
+- Data Extraction
+- E-Commerce Data
+- Amazon
+- marketplace data
+- Product Intelligence
+- Price Monitoring
+- Competitor Research
+- MCP
+- Agent Tooling
+tags_raw:
+- web scraping
+- data extraction
+- e-commerce data
+- amazon
+- marketplace data
+- product intelligence
+- price monitoring
+- competitor research
+- mcp
+- agent tooling
+apis:
+- name: Amazon Scraper REST API
+  description: REST/JSON API for single-product (ASIN) extraction, search results, and async batch scraping across
+    20 Amazon marketplaces. API key auth via ?api_key= query parameter; only HTTP 2xx responses are billed.
+  humanURL: https://amazonscraperapi.com/docs
+  baseURL: https://api.amazonscraperapi.com
+  tags:
   - Web Scraping
   - Data Extraction
   - E-Commerce Data
@@ -29,7 +56,7 @@ tags:
   - Competitor Research
   - MCP
   - Agent Tooling
-tags_raw:
+  tags_raw:
   - web scraping
   - data extraction
   - e-commerce data
@@ -40,45 +67,89 @@ tags_raw:
   - competitor research
   - mcp
   - agent tooling
-apis:
-  - name: Amazon Scraper REST API
-    description: >-
-      REST/JSON API for single-product (ASIN) extraction, search results, and async batch scraping across 20 Amazon
-      marketplaces. API key auth via ?api_key= query parameter; only HTTP 2xx responses are billed.
-    humanURL: https://amazonscraperapi.com/docs
-    baseURL: https://api.amazonscraperapi.com
-    tags:
-      - Web Scraping
-      - Data Extraction
-      - E-Commerce Data
-      - Amazon
-      - marketplace data
-      - Product Intelligence
-      - Price Monitoring
-      - Competitor Research
-      - MCP
-      - Agent Tooling
-    tags_raw:
-      - web scraping
-      - data extraction
-      - e-commerce data
-      - amazon
-      - marketplace data
-      - product intelligence
-      - price monitoring
-      - competitor research
-      - mcp
-      - agent tooling
-    properties:
-      - type: Documentation
-        url: https://amazonscraperapi.com/docs
-      - type: LLMSTxt
-        url: https://amazonscraperapi.com/docs/llms.txt
+  properties:
+  - type: Documentation
+    url: https://amazonscraperapi.com/docs
+  - type: LLMSTxt
+    url: https://amazonscraperapi.com/docs/llms.txt
+  - type: OpenAPI
+    url: openapi/amazon-scraper-api-openapi-original.json
 maintainers:
-  - FN: ChocoData
-    url: https://github.com/ChocoData-com
+- FN: ChocoData
+  email: info@amazonscraperapi.com
+  url: https://github.com/ChocoData-com
 generated:
   by: apis.io/add
   model: claude-opus-4-8
   confidence: 90
   at: '2026-07-16T16:05:10.324Z'
+common:
+- type: Website
+  url: https://amazonscraperapi.com
+- type: DomainSecurity
+  url: security/amazon-scraper-api-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-scraper-api-authentication.yml
+- type: Packages
+  url: packages/amazon-scraper-api-packages.yml
+- type: SDKs
+  url: packages/amazon-scraper-api-packages.yml
+- type: WellKnown
+  url: well-known/amazon-scraper-api-well-known.yml
+- type: MCPServer
+  url: mcp/amazon-scraper-api-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/amazon-scraper-api-tool-crosswalk.yml
+- type: LLMsTxt
+  url: llms/amazon-scraper-api-llms.txt
+- type: Overlay
+  url: overlays/amazon-scraper-api-openapi-overlay.yaml
+- type: Conformance
+  url: conformance/amazon-scraper-api-conformance.yml
+- type: ErrorCatalog
+  url: errors/amazon-scraper-api-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/amazon-scraper-api-lifecycle.yml
+- type: Deprecation
+  url: https://amazonscraperapi.com/docs/changelog
+- type: Conventions
+  url: conventions/amazon-scraper-api-conventions.yml
+- type: ChangeLog
+  url: changelog/amazon-scraper-api-changelog.yml
+- type: CLI
+  url: cli/amazon-scraper-api-cli.yml
+- type: DataModel
+  url: data-model/amazon-scraper-api-data-model.yml
+- type: Webhooks
+  url: asyncapi/amazon-scraper-api-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: RateLimits
+  url: rate-limits/amazon-scraper-api-rate-limits.yml
+- type: Plans
+  url: plans/amazon-scraper-api-plans-pricing.yml
+- type: DeveloperPortal
+  url: https://app.amazonscraperapi.com
+- type: APIReference
+  url: https://amazonscraperapi.com/docs
+- type: GettingStarted
+  url: https://amazonscraperapi.com/docs/getting-started
+- type: Support
+  url: mailto:info@amazonscraperapi.com
+- type: Blog
+  url: https://amazonscraperapi.com/blog
+- type: GitHubOrganization
+  url: https://github.com/ChocoData-com
+- type: Pricing
+  url: https://amazonscraperapi.com/pricing
+- type: SignUp
+  url: https://app.amazonscraperapi.com
+- type: TermsOfService
+  url: https://amazonscraperapi.com/terms
+- type: PrivacyPolicy
+  url: https://amazonscraperapi.com/privacy
+x-enrichment:
+  date: '2026-09-03'
+  status: enriched
+  artifacts_added: 23
+  pass: local-v2

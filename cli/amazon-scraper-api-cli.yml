@@ -1,0 +1,31 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/docs/guides/sdks
+name: asa
+package: amazon-scraper-api-cli
+install:
+- method: npm
+  command: npm install -g amazon-scraper-api-cli
+  note: The docs advertise `npm install -g amazonscraperapi-cli`, which is not on npm (404); the published package is `amazon-scraper-api-cli` (bin `asa`) per the GitHub repo package.json and the npm registry.
+version: 0.1.5
+published: '2026-05-25'
+repository: https://github.com/ChocoData-com/amazon-scraper-api-cli
+auth:
+  command: asa login asa_live_YOUR_KEY
+  storage: ~/.asa/config
+commands:
+- group: amazon
+  commands:
+  - command: asa amazon product --query <ASIN> --domain <tld>
+    description: Scrape a single product.
+  - command: asa amazon search --query "<keywords>" --domain <tld> --pages <n>
+    description: Run a keyword search.
+flows:
+- name: Bulk pipe
+  example: cat asins.txt | asa amazon product --domain com --json-per-line > out.ndjson
+  description: NDJSON output (one row per line) for piping into jq, awk, or a warehouse loader.
+output:
+  default: JSON
+  flags: [--json-per-line]
+notes:
+- Wraps auth, retries, rate limiting, and typed responses like the language SDKs.

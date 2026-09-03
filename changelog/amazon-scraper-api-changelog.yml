@@ -1,0 +1,36 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/docs/changelog
+scheme: dated entries, newest first
+current_version: v1 (URI path)
+policy: Breaking API changes announced 14 days in advance via email + changelog; in-flight requests always settled under the old contract.
+entries:
+- date: '2026-05-19'
+  breaking: false
+  highlights:
+  - New 404 product_not_found error code (previously a misleading 502 target_unreachable); retryable:false, never billed.
+  - Search endpoint detects Amazon's Akamai bot-manager interstitial and classifies it for residential-IP rotation.
+  - Search adds no_results:true flag for genuine zero-match pages (previously 502 extraction_failed).
+  - Search field-extraction fixes on 5 result-card fields (reviews_count, price_strikethrough, highest_price, sales_volume, organic_position).
+- date: '2026-04-21'
+  breaking: false
+  highlights:
+  - Launched /docs on the marketing site (11 pages) plus /docs/llms.txt, /docs/llms-full.txt and .md variants of every doc URL.
+  - Dashboard billing calculator and loading skeletons.
+  - All three SDKs bumped to v0.1.4 with 5-credit pricing README updates.
+- date: '2026-04-16'
+  breaking: true
+  highlights:
+  - Credit rebase - 1 basic scrape now 5 credits (was 1); allowances scaled x5 so dollar cost is unchanged.
+  - Response header prefix changed Spb-* to Asa-*; old prefix served for 90 more days then removed.
+- date: '2026-04-10'
+  breaking: false
+  highlights:
+  - Success-rate improvements for Amazon's latest A/B layout (~87% to ~97% on a 30-query international set).
+  - Parser hardening for gift-card and subscription-plan product templates.
+- date: '2026-04-01'
+  breaking: false
+  highlights:
+  - render_js and screenshot params reserved (501 not_implemented until shipped).
+  - New Asa-Attempts response header reporting internal retries.
+  - Non-2xx responses guaranteed free.

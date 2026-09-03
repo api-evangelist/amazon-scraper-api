@@ -1,0 +1,49 @@
+generated: '2026-09-03'
+method: searched
+source: openapi/amazon-scraper-api-openapi-original.json
+docs: https://amazonscraperapi.com/docs/guides/authentication
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - query
+  - header
+schemes:
+- name: apiKeyQuery
+  type: apiKey
+  in: query
+  parameter: api_key
+  sources:
+  - openapi/amazon-scraper-api-openapi-original.json
+  - https://amazonscraperapi.com/docs/guides/authentication
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  note: Documented in the provider's ai-plugin.json and published Claude Skills; not declared in the OpenAPI securitySchemes.
+  sources:
+  - well-known/amazon-scraper-api-ai-plugin.json
+  - skills/amazon-scraper-api-scrape-amazon-product.md
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  note: Authorization Bearer with the same API key, per ai-plugin.json and the OpenAPI.
+  sources:
+  - openapi/amazon-scraper-api-openapi-original.json
+key_format:
+  prefixes:
+  - prefix: asa_live_
+    meaning: Production traffic
+  - prefix: asa_test_
+    meaning: Sandbox keys (roadmap only - not yet live; would return deterministic fixtures and never bill)
+  shortprefix: 12 characters after the prefix identify a key in the dashboard and logs without revealing the secret
+management:
+  console: https://app.amazonscraperapi.com
+  max_active_keys_per_workspace: 20
+  rotation: Generate a second key, deploy, revoke the old one; revocation is global within ~30 seconds and revoked keys return 401 {"error":"revoked"}
+  usage_retention_after_revoke: 90 days
+notes:
+- Unauthorized (401) requests are never billed.
+- Keys are workspace-scoped; the monthly credit allowance is per workspace, not per key.
+- IP allow-lists are on the roadmap for Pro and Custom plans.

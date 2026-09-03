@@ -1,0 +1,84 @@
+generated: '2026-09-03'
+method: probed
+source: live probes of amazonscraperapi.com, www.amazonscraperapi.com, api.amazonscraperapi.com, app.amazonscraperapi.com
+note: >-
+  One real hit - /.well-known/ai-plugin.json on the apex domain (valid JSON plugin manifest, saved verbatim).
+  A negative-control probe of a path that cannot exist returned 404, so the hit is genuine, not a catch-all.
+  www.amazonscraperapi.com 308-redirects every path to the apex. All other named paths 404 on every host.
+path_echo_control: passed
+hosts:
+- host: https://amazonscraperapi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: amazon-scraper-api-ai-plugin.json
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/amazon-scraper-api-negative-control-8c1f42aa.json
+    status: 404
+- host: https://www.amazonscraperapi.com
+  documents:
+  - path: /.well-known/ai-plugin.json
+    status: 308
+  - path: /.well-known/security.txt
+    status: 308
+- host: https://api.amazonscraperapi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://app.amazonscraperapi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404

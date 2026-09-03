@@ -1,0 +1,19 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/docs/changelog
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://amazonscraperapi.com/docs
+deprecation:
+  policy: Breaking API changes announced 14 days in advance via email + changelog; in-flight requests settled under the old contract. Deprecated response-header prefix (Spb-*) was dual-served for 90 days before removal.
+  policy_url: https://amazonscraperapi.com/docs/changelog
+  sunset_header: false
+sla:
+  url: null
+  note: No published SLA; the Custom plan lists "SLA on request".
+status_page: null
+status_page_note: No status page found - status.amazonscraperapi.com does not resolve and /status returns 404 (probed 2026-09-03).
+deprecated_operations: []
+roadmap_params:
+  note: render_js and screenshot query params are reserved and return 501 not_implemented until shipped (announced for Q3 2026).

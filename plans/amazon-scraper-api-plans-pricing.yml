@@ -1,0 +1,43 @@
+generated: '2026-09-03'
+method: searched
+source: https://amazonscraperapi.com/pricing
+plan_count: 5
+currency: USD
+billing_note: Only successful (2xx) responses are billed; non-2xx responses are guaranteed free. Credit balance never expires.
+plans:
+- name: Free
+  price: 0
+  period: monthly
+  included: 1,000 requests / month
+  concurrency: 50
+  overage: top-up at $0.90 per 1,000 successful requests
+  features: [All 20 marketplaces, Full dashboard + analytics, Community support]
+- name: Vibe
+  price: 19
+  period: monthly
+  effective_rate: $0.70 per 1,000
+  included: 27,000 requests / month
+  concurrency: 100
+  overage: top-up at $0.90 per 1,000
+  features: [All endpoints + content-language, Country-matched residential IPs, Per-API-key usage tracking, Email support (1 business day)]
+- name: Pro
+  price: 49
+  period: monthly
+  effective_rate: $0.60 per 1,000
+  included: 82,000 requests / month
+  concurrency: 200
+  overage: top-up at $0.90 per 1,000
+  features: [Priority routing queue, Country-matched residential IPs, Team seats (up to 5), Email + chat support]
+- name: Custom
+  price: 100-2000
+  period: monthly
+  effective_rate: $0.50 per 1,000 at every level
+  included: 200k - 4M+ requests / month
+  concurrency: 300-1000+
+  features: [Highest-priority queue, Premium proxy pool + SLA on request, Unlimited team seats, Wire/invoice/annual PO, Dedicated Slack channel]
+- name: Pay-as-you-go top-up
+  price: 0.90 per 1,000 successful requests
+  period: usage
+  note: Available on every plan including Free; balance never expires.
+credits:
+  note: 1 basic scrape = 5 credits (rebased 2026-04-16; dollar cost unchanged). Free plan = 1,000 scrapes = 5,000 credits.

@@ -1,0 +1,94 @@
+# Amazon Scraper API
+
+> Structured Amazon data via a simple REST API. Get product, search, and review data as clean JSON in seconds across 20 Amazon marketplaces. Pay only for successful responses.
+
+Amazon Scraper API (by ChocoData) handles proxies, CAPTCHAs, and HTML parsing and returns about 55 structured fields per product. It is built for developers and AI agents that need reliable Amazon data without maintaining a scraping stack.
+
+## Key facts
+
+- Returns about 55 structured fields per product: title, price, buybox, variations, images, reviews, ratings, sales rank, and category.
+- Pay-as-you-go pricing is $0.90 per 1,000 successful requests; cheaper monthly plans scale to as low as $0.50 per 1,000.
+- The free plan includes 1,000 scrapes (5,000 credits) at no cost.
+- Non-2xx responses are never charged: you pay only for successful results.
+- Typical response time is about 3 seconds.
+- Covers 20 Amazon marketplaces: US, UK, DE, FR, IT, ES, NL, PL, SE, CA, MX, BR, AU, JP, SG, IN, TR, AE, SA, EG.
+- Endpoints: product (single ASIN), search (keyword results), and asynchronous batch. Authenticate with an api_key query parameter.
+- Official SDKs for Node.js, Python, Go, and a CLI, plus an MCP server for AI agents.
+
+## For AI agents
+
+- [Machine-readable API usage](https://amazonscraperapi.com/api/ai): how and when to call the API, written for models.
+- [OpenAPI specification](https://amazonscraperapi.com/openapi.json): full machine-readable API spec.
+- [Plugin manifest](https://amazonscraperapi.com/.well-known/ai-plugin.json): agent/plugin discovery manifest.
+- [Documentation manifest](https://amazonscraperapi.com/docs/llms.txt): llms.txt index of every docs page.
+
+## Documentation
+
+- [Getting started](https://amazonscraperapi.com/docs/getting-started): Make your first scrape in under 2 minutes. Get an API key, fire one cURL request, parse the response.
+- [Authentication](https://amazonscraperapi.com/docs/guides/authentication): How to authenticate requests - pass your API key as an api_key query parameter. Keys have prefixes, can be rotated,...
+- [Product endpoint](https://amazonscraperapi.com/docs/endpoints/product): Extract full product data for a single Amazon ASIN - ~55 structured fields including price, variations, buybox,...
+- [Error codes & retry semantics](https://amazonscraperapi.com/docs/guides/errors): Complete list of error codes the API returns, when to retry, and how to back off. Only 2xx responses are billed.
+- [Search endpoint](https://amazonscraperapi.com/docs/endpoints/search): Run Amazon keyword searches and get ranked product listings with organic/sponsored positions, prices, ratings, and...
+- [Rate limits & concurrency](https://amazonscraperapi.com/docs/guides/rate-limits): Per-plan ceilings on sustained RPS and concurrent in-flight requests. What 429 means, how to check your current...
+- [Batch endpoint (async)](https://amazonscraperapi.com/docs/endpoints/batch): Submit up to 1,000 ASINs or search queries in one call. Receive results via webhook or poll.
+- [SDK quick-starts](https://amazonscraperapi.com/docs/guides/sdks): Install and first-request snippets for the official Node, Python, Go, and CLI SDKs. All four wrap auth, retries,...
+- [Country, marketplace, and content language](https://amazonscraperapi.com/docs/guides/country-and-language): How our API routes traffic to the right Amazon marketplace and which languages each marketplace actually serves.
+- [Billing policy](https://amazonscraperapi.com/docs/guides/billing): Exactly which response types cost credits. Simple rule - only successful (2xx) responses are billed.
+- [Changelog](https://amazonscraperapi.com/docs/changelog): Every visible change to the API, the SDKs, and the dashboard. Newest first. Breaking changes are flagged; we give...
+
+## Guides and tutorials
+
+- [Amazon ASIN vs EAN vs ISBN vs UPC Compared (2026)](https://amazonscraperapi.com/blog/asin-vs-ean-vs-isbn-vs-upc): ASIN, EAN, ISBN and UPC explained for Amazon sellers - what each identifier means, where they apply, how to get...
+- [Amazon ASIN: What Is an ASIN Number?](https://amazonscraperapi.com/blog/what-is-an-asin): An Amazon ASIN is a 10-character alphanumeric code that uniquely identifies every product in the Amazon catalog....
+- [Best Amazon Scrapers in 2026: Tested and Compared](https://amazonscraperapi.com/blog/best-amazon-scrapers): Amazon scrapers compared: pricing per 1,000 requests, success rates, and response times. Amazon Scraper API leads...
+- [Best Proxies for Amazon Scraping in 2026 (Tested)](https://amazonscraperapi.com/blog/best-proxies-for-amazon-scraping): Datacenter proxies fail on Amazon at 60-70% rates. Residential and mobile proxies hit 90%+. Which providers...
+- [How to Bypass Amazon Captcha When Scraping in 2026](https://amazonscraperapi.com/blog/bypass-amazon-captcha): Amazon serves a "Robot Check" page when it suspects automation - with a 200 status code that silently breaks naive...
+- [How to Scrape All Products From an Amazon Seller (Python)](https://amazonscraperapi.com/blog/scrape-amazon-seller-products): Scrape every product from an Amazon seller storefront with Python: find the Seller ID, page the s?me= catalog, beat...
+- [How to Scrape Amazon Best Sellers with Python (2026 Guide)](https://amazonscraperapi.com/blog/scrape-amazon-best-sellers): Scrape Amazon Best Sellers with Python: the zgbs URL pattern, why requests + BeautifulSoup only returns 30 of 100...
+- [How to Scrape Amazon Data into Google Sheets in 2026](https://amazonscraperapi.com/blog/scrape-amazon-google-sheets): IMPORTXML on Amazon breaks within hours. This guide ships a working Google Apps Script that calls a scraper API and...
+- [How to Scrape Amazon Prices With Python in 2026](https://amazonscraperapi.com/blog/scrape-amazon-prices): Scrape Amazon prices with Python - durable CSS selectors, a price tracker example, and how to handle Buy Box...
+- [How to Scrape Amazon Product Listings (Python Guide)](https://amazonscraperapi.com/blog/scrape-amazon-product-listings): Scrape Amazon product listings with Python: working selectors for title, ASIN, price, ratings, bullet points,...
+- [How to Scrape Amazon Products in 2026 (Python + API Guide)](https://amazonscraperapi.com/blog/scrape-amazon): Scrape Amazon products with working Python code, durable CSS selectors, proxy guidance, and a managed API from...
+- [How to Scrape Amazon Reviews With Python in 2026](https://amazonscraperapi.com/blog/scrape-amazon-reviews): Scrape Amazon reviews around the login wall: what still works, working CSS selectors, Python code, and when to...
+- [How to Scrape Amazon Search Results in 2026](https://amazonscraperapi.com/blog/scrape-amazon-search): Scrape Amazon search results with Python: working CSS selectors for organic vs sponsored positions, prices,...
+- [Is Scraping Amazon Legal? A 2026 Guide for Developers](https://amazonscraperapi.com/blog/is-scraping-amazon-legal): Scraping publicly visible Amazon data is generally legal in the US, but Amazon ToS is a separate contract matter....
+- [Load Amazon Data Into Your Warehouse With dlt and Amazon Scraper API](https://amazonscraperapi.com/blog/load-amazon-data-with-dlt): A working dlt config to pipe Amazon product data into Postgres, BigQuery, Snowflake, or DuckDB. Full source,...
+
+## Integrations and SDKs
+
+- [Python SDK](https://amazonscraperapi.com/integrations/python): Official Python client for the Amazon Scraper API.
+- [Node.js SDK](https://amazonscraperapi.com/integrations/nodejs): Official Node.js / TypeScript client.
+- [Go SDK](https://amazonscraperapi.com/integrations/go): Official Go client.
+- [CLI](https://amazonscraperapi.com/integrations/cli): Command-line tool for ad-hoc scrapes and shell scripts.
+- [MCP server](https://amazonscraperapi.com/integrations/mcp): Model Context Protocol server so AI agents can call the API directly.
+
+## Product
+
+- [Amazon Scraper API](https://amazonscraperapi.com/): Homepage: live demo, capabilities, and pricing for the Amazon data API.
+- [Pricing](https://amazonscraperapi.com/pricing): Plans and pay-as-you-go rates. You pay only for successful (2xx) responses.
+- [Features](https://amazonscraperapi.com/features): What the API extracts: products, search, reviews, variations, ~55 fields.
+- [Amazon Product Scraper API](https://amazonscraperapi.com/amazon-product-scraper-api): Product endpoint: scrape any Amazon product by ASIN, about 55 structured fields as JSON.
+- [Amazon Search Scraper API](https://amazonscraperapi.com/amazon-search-scraper-api): Search endpoint: scrape Amazon search results, organic and sponsored, as ranked JSON.
+- [Free ASIN lookup tool](https://amazonscraperapi.com/asin-lookup): Look up any Amazon ASIN's live product data in the browser, no code.
+- [Free Amazon Scraper API](https://amazonscraperapi.com/free-amazon-scraper-api): Free tier: 1,000 successful requests on signup, no card, product and search JSON across 20 marketplaces.
+
+## Alternatives and comparisons
+
+- [ScraperAPI alternative](https://amazonscraperapi.com/alternative/scraperapi): Amazon Scraper API vs ScraperAPI: flat success-only pricing instead of a credit system.
+- [Oxylabs alternative](https://amazonscraperapi.com/alternative/oxylabs): Amazon Scraper API vs Oxylabs: true success-only billing (only 2xx) and no monthly minimum.
+- [Bright Data alternative](https://amazonscraperapi.com/alternative/bright-data): Amazon Scraper API vs Bright Data: self-serve with no KYC and a lower flat rate.
+- [Apify alternative](https://amazonscraperapi.com/alternative/apify): Amazon Scraper API vs Apify: one flat success-only rate instead of a platform fee plus per-result charges.
+- [ScrapingBee alternative](https://amazonscraperapi.com/alternative/scrapingbee): Amazon Scraper API vs ScrapingBee: Amazon-specific, pay-as-you-go, no required subscription.
+
+## Reports and research
+
+- [State of Amazon Scraping 2026](https://amazonscraperapi.com/reports/state-of-amazon-scraping-2026): Original research on Amazon scraping methods, blocking, and costs.
+- [Global Web Scraping Market Forecast](https://amazonscraperapi.com/reports/global-web-scraping-market-forecast): Market size and growth forecasts for the web-scraping industry.
+
+## Company
+
+- [Affiliate program](https://amazonscraperapi.com/affiliate): Earn recurring commission for referring developers to the API.
+- [Privacy policy](https://amazonscraperapi.com/privacy): How customer and visitor data is handled.
+- [Terms of service](https://amazonscraperapi.com/terms): Terms governing use of the API and website.
+
+Content is licensed CC BY 4.0 with attribution to Amazon Scraper API (https://amazonscraperapi.com). Last updated 2026-07-21.

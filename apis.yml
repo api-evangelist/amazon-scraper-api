@@ -40,40 +40,20 @@ tags_raw:
 - mcp
 - agent tooling
 apis:
-- name: Amazon Scraper REST API
-  description: REST/JSON API for single-product (ASIN) extraction, search results, and async batch scraping across
-    20 Amazon marketplaces. API key auth via ?api_key= query parameter; only HTTP 2xx responses are billed.
+- aid: amazon-scraper-api:amazon-scraper-api-amazon-api
+  name: Amazon Scraper API Amazon API
+  description: The Amazon API from Amazon Scraper API — 3 operation(s) for amazon.
   humanURL: https://amazonscraperapi.com/docs
   baseURL: https://api.amazonscraperapi.com
   tags:
-  - Web Scraping
-  - Data Extraction
-  - E-Commerce Data
   - Amazon
-  - marketplace data
-  - Product Intelligence
-  - Price Monitoring
-  - Competitor Research
-  - MCP
-  - Agent Tooling
-  tags_raw:
-  - web scraping
-  - data extraction
-  - e-commerce data
-  - amazon
-  - marketplace data
-  - product intelligence
-  - price monitoring
-  - competitor research
-  - mcp
-  - agent tooling
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-scraper-api-amazon-api-openapi.yml
   - type: Documentation
     url: https://amazonscraperapi.com/docs
   - type: LLMSTxt
     url: https://amazonscraperapi.com/docs/llms.txt
-  - type: OpenAPI
-    url: openapi/amazon-scraper-api-openapi-original.json
 maintainers:
 - FN: ChocoData
   email: info@amazonscraperapi.com

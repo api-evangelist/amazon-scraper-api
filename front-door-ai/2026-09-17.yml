@@ -1,0 +1,30 @@
+# Front Door AI Index — amazon-scraper-api — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: amazon-scraper-api
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: amazonscraperapi.com
+  final_host: amazonscraperapi.com
+  ownership: own
+  owner: amazon-scraper-api
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 9
+  host_score: 9
+  density: 5.81
+  words: 1549
+  tiers:
+    agentic: 5
+    core: 4
+    model: 0
+  ambiguous: 2
+  top_terms:
+    MCP: 3
+    AI agent: 2
+    AI: 2
+    agent: 2
+    LLMs: 1
+    ML: 1

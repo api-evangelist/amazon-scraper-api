@@ -1,0 +1,2 @@
+# x-archived-from: amazon-scraper-api-openapi-original.json
+# x-archived-on: 2026-09-16

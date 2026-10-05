@@ -1,0 +1,12 @@
+{
+ "url": "https://amazonscraperapi.com/openapi.json",
+ "requested_url": "https://amazonscraperapi.com/openapi.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 3804,
+ "sha256": "a5731e487207fb0e3581b58fe178636571fe22847ddb2c61f6a3a1fb8a042192",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}

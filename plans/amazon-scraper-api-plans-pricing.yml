@@ -41,3 +41,46 @@ plans:
   note: Available on every plan including Free; balance never expires.
 credits:
   note: 1 basic scrape = 5 credits (rebased 2026-04-16; dollar cost unchanged). Free plan = 1,000 scrapes = 5,000 credits.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Vibe
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Pro
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Custom
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Pay-as-you-go top-up
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - per-use

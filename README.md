@@ -1,4 +1,4 @@
-# amazon-scraper-api
+# Amazon Scraper API
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -65,3 +65,123 @@
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
 REST/JSON API for extracting structured Amazon product, search, and batch data across 20 marketplaces, with key-based authentication, official SDKs, a CLI, and a local MCP server. Operated independently under the ChocoData namespace; not affiliated with Amazon.com, Inc.
+
+**Areas:** Web Scraping · Data Extraction · E-Commerce Data · Amazon · marketplace data · Product Intelligence · Price Monitoring · Competitor Research · MCP · Agent Tooling
+
+## Amazon Scraper API on APIs.io
+
+Everything profiled for Amazon Scraper API is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-scraper-api/](https://apis.io/providers/amazon-scraper-api/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Amazon Scraper API Amazon API](https://apis.io/apis/amazon-scraper-api/amazon-scraper-api-amazon-api/) — The Amazon API from Amazon Scraper API — 3 operation(s) for amazon.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Amazon Scraper Api Webhooks](https://apis.io/asyncapis/amazon-scraper-api/amazon-scraper-api-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [amazonscraperapi](https://apis.io/servers/amazon-scraper-api/amazonscraperapi/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Amazon Scraper Api Openapi Overlay](https://apis.io/overlays/amazon-scraper-api/amazon-scraper-api-openapi-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Scraper Api Authentication](https://apis.io/security/amazon-scraper-api/amazon-scraper-api-authentication/)
+- [Amazon Scraper Api Domain Security](https://apis.io/security/amazon-scraper-api/amazon-scraper-api-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Scraper Api Plans Pricing](https://apis.io/plans/amazon-scraper-api/amazon-scraper-api-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Scraper Api Rate Limits](https://apis.io/rate-limits/amazon-scraper-api/amazon-scraper-api-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://amazonscraperapi.com)
+- [Getting started](https://amazonscraperapi.com/docs/getting-started)
+- [API reference](https://amazonscraperapi.com/docs)
+- [Pricing](https://amazonscraperapi.com/pricing)
+- [Sign up](https://app.amazonscraperapi.com)
+- [Blog](https://amazonscraperapi.com/blog)
+- [Terms of service](https://amazonscraperapi.com/terms)
+- [Privacy policy](https://amazonscraperapi.com/privacy)
+- [GitHub](https://github.com/ChocoData-com)
+
+## API Evangelist rating
+
+**Kin Score 61.0** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 53.4 |
+| Contract governance | 4.5 |
+| Operational transparency | 65.8 |
+| Developer ergonomics | 78.6 |
+| Access clarity | 76.3 |
+
+**Agent readiness 33.7** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-scraper-api/](https://apis.io/providers/amazon-scraper-api/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Scraper API: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-scraper-api/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).

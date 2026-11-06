@@ -66,7 +66,7 @@ rate_limit_statements:
 - 300-1000+ concurrent requests
 - Our limit is per-account; a 429 with X-Concurrency-Remaining header tells your client when to back off.
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid

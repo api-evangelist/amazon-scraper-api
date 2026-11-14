@@ -11,6 +11,12 @@ artifacts:
   capabilities/amazon-scraper-api-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
   changelog/amazon-scraper-api-changelog.yml:
     method: searched
     evidence: declared in the artifact
@@ -23,8 +29,14 @@ artifacts:
   conventions/amazon-scraper-api-conventions.yml:
     method: searched
     evidence: declared in the artifact
+  data-license/amazon-scraper-api-data-license.yml:
+    method: harvested
+    evidence: declared in the artifact
   data-model/amazon-scraper-api-data-model.yml:
     method: searched
+    evidence: declared in the artifact
+  deprecation/amazon-scraper-api-deprecation-policy.yml:
+    method: harvested
     evidence: declared in the artifact
   errors/amazon-scraper-api-problem-types.yml:
     method: searched
@@ -38,6 +50,12 @@ artifacts:
   heartbeat/2026-11-02.yml:
     method: unknown
     evidence: no authorship recorded
+  heartbeat/2026-11-06.yml:
+    method: unknown
+    evidence: no authorship recorded
+  heartbeat/2026-11-13.yml:
+    method: unknown
+    evidence: no authorship recorded
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -47,7 +65,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -116,6 +134,9 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/amazon-scraper-api-lifecycle.yml:
     method: searched
     evidence: declared in the artifact
@@ -150,6 +171,9 @@ artifacts:
   plans/amazon-scraper-api-price-estimates.yml:
     method: unknown
     evidence: no authorship recorded
+  privacy/amazon-scraper-api-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-scraper-api-rate-limits.yml:
     method: searched
     evidence: declared in the artifact
@@ -170,6 +194,9 @@ artifacts:
     evidence: no authorship recorded
   sla/amazon-scraper-api-sla.yml:
     method: generated
+    evidence: declared in the artifact
+  terms/amazon-scraper-api-terms-of-service.yml:
+    method: harvested
     evidence: declared in the artifact
   well-known/amazon-scraper-api-ai-plugin.json:
     method: unknown
